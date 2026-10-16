@@ -1,0 +1,158 @@
+/* ============================================================
+   全局样式：主题变量、基础重置、通用工具类
+   （组件内部只保留各自特有的样式）
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 主题 CSS 变量（亮色默认 / 暗色通过 html.dark 覆盖） ---------- */
+:root {
+  --bg-color: #f5f6f7;
+  --text-color: #1f2328;
+  --card-bg: #ffffff;
+  --box-bg: #f3f4f6;
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --tag-bg: #e8e8e8;
+  --tag-text: #111111;
+  --modal-bg: #ffffff;
+  --shadow: 0 1px 8px rgba(0, 0, 0, 0.12);
+}
+
+:root.dark {
+  --bg-color: #111111;
+  --text-color: #ffffff;
+  --card-bg: #1a1a1a;
+  --box-bg: #222222;
+  --border-color: #3a3a3a;
+  --input-bg: #222222;
+  --tag-bg: #333333;
+  --tag-text: #ffffff;
+  --modal-bg: #222222;
+  --shadow: none;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Microsoft Yahei", "PingFang SC", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* ---------- 通用按钮 ---------- */
+.btn {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn:hover {
+  opacity: 0.85;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-theme {
+  background-color: #555555;
+  color: #fff;
+}
+.btn-edit {
+  background-color: #10b981;
+  color: #fff;
+}
+.btn-primary {
+  background-color: #3b82f6;
+  color: #fff;
+}
+.btn-default {
+  background-color: #9ca3af;
+  color: #fff;
+}
+.btn-clear {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+/* ---------- 通用卡片与标题 ---------- */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+.sub-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 20px 0 8px;
+}
+
+/* ---------- 通用信息条目与详情框 ---------- */
+.info-item {
+  margin: 6px 0;
+  font-size: 15px;
+}
+.detail-box {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  background-color: var(--box-bg);
+}
+
+/* ---------- 通用输入框 ---------- */
+.search-input {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus {
+  border-color: #3b82f6;
+}
+.search-input::placeholder {
+  color: #999;
+}
+
+/* ---------- 通用技能标签 ---------- */
+.skill-tag {
+  display: inline-block;
+  padding: 5px 11px;
+  margin: 5px 4px;
+  border-radius: 16px;
+  font-size: 14px;
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity 0.2s;
+}
+.skill-tag:hover {
+  opacity: 0.75;
+}
